@@ -1,0 +1,31 @@
+{
+  "revision": "1.0.0",
+  "roots": ["global"],
+  "policies":
+  {
+    "global.edp.deploy_template.security_context": {
+      "file": [
+        { "include": "deploy-templates/*.y*ml" }
+      ]
+    },
+    "global.maven.pom": {
+      "projectType": [
+        { "include": "maven" }
+      ],
+      "file" : [
+        { "include": "pom.xml" },
+        { "include": "**/pom.xml" }
+      ]
+    },
+    "global.spring.app_config": {
+      "projectType": [
+        { "include": "maven" },
+        { "include": "gradle" }
+      ],
+      "file": [
+        { "include": "**/app.y*ml" },
+        { "include": "**/application.y*ml" }
+      ]
+    }
+  }
+}
